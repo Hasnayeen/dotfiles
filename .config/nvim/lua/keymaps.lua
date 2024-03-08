@@ -1,50 +1,36 @@
-local harpoon = require("plugins.harpoon")
+local wk = require("which-key")
 
-local function set(mode, lhs, rhs, opts)
-    vim.keymap.set(mode, lhs, rhs, opts)
-end
+-- Navigation keybinds --
+wk.register({
+    m = {
+        name = "Navigation",
+        h = { "<C-w>h", "[M]ove Left" },
+        j = { "<C-w>j", "[M]ove Down" },
+        k = { "<C-w>k", "[M]ove Up" },
+        l = { "<C-w>l", "[M]ove Right" },
+        v = { "<C-w>v", "[V]split" },
+        m = { "<C-w>v<C-w>l", "[V]split [M]ove" },
+    },
+}, { prefix = "<leader>" })
 
-set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", {desc = "Dismiss Noice Message"})
+wk.register({
+    n = {
+        name = "Noice Message",
+        d = { "<cmd>NoiceDismiss<CR>", "[N]oice Message [D]ismissal" },
+    },
+}, { prefix = "<leader>" })
 
--- Harpoon keybinds --
--- Open harpoon ui
-set("n", "<leader>ho", function()
-	harpoon.ui.toggle_quick_menu()
-end)
-
--- Add current file to harpoon
-set("n", "<leader>ha", function()
-	harpoon.mark.add_file()
-end)
-
--- Remove current file from harpoon
-set("n", "<leader>hr", function()
-	harpoon.mark.rm_file()
-end)
-
--- Remove all files from harpoon
-set("n", "<leader>hc", function()
-	harpoon.mark.clear_all()
-end)
-
--- Quickly jump to harpooned files
-set("n", "<leader>1", function()
-	harpoon.ui.nav_file(1)
-end)
-
-set("n", "<leader>2", function()
-	harpoon.ui.nav_file(2)
-end)
-
-set("n", "<leader>3", function()
-	harpoon.ui.nav_file(3)
-end)
-
-set("n", "<leader>4", function()
-	harpoon.ui.nav_file(4)
-end)
-
-set("n", "<leader>5", function()
-	harpoon.ui.nav_file(5)
-end)
+-- Window keybinds --
+wk.register({
+    w = {
+        name = "Window",
+        h = { "<C-w>H", "[W]indow Left" },
+        j = { "<C-w>J", "[W]indow Down" },
+        k = { "<C-w>K", "[W]indow Up" },
+        l = { "<C-w>L", "[W]indow R]ight" },
+        s = { "<C-w>S", "[W]indow [S]plit" },
+        v = { "<C-w>V", "[W]indow] [V]split" },
+        q = { "<C-w>Q", "[W]indow [Q]uit" },
+    },
+}, { prefix = "<leader>" })
 

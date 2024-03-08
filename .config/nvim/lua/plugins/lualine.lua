@@ -6,10 +6,13 @@ return {
             options = {
                 theme = 'catppuccin',
            		globalstatus = true,
-				component_separators = { left = "", right = "" },
+				component_separators = { left = "|", right = "|" },
 				section_separators = { left = "█", right = "█" },
             },
-            winbar = {
+            sections = {
+                lualine_x = {'buffer', 'searchcount'},
+            },
+            inactive_winbar = {
                 lualine_y = {'%m'},
                 lualine_z = {'filename'}
             }
