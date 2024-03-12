@@ -32,6 +32,9 @@ return {
 			lspconfig.tsserver.setup({
 				autostart = false,
 			})
+            lspconfig.jsonls.setup({
+                autostart = false,
+            })
 			lspconfig.phpactor.setup({})
 
 			local wk = require("which-key")

@@ -1,0 +1,119 @@
+{
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "app_ids-mapping": {
+            "org.wezfurlong.wezterm": "",
+        }
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}{id}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 45
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "",
+        "format-connected": " {num_connections}",
+        "format-off": "!",
+        "format-on": "",
+        "tooltip-format": "{device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "sleep 0.1 && ~/.config/hypr/scripts/bluetooth.sh",
+    },
+    "custom/launcher": {
+        "format": "",
+        "on-click": "sleep 0.1 && ~/.config/hypr/scripts/applauncher.sh",
+        "tooltip": false
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "sleep 0.1 && ~/.config/hypr/scripts/powermenu.sh"
+    },
+    "cpu": {
+        "format": "{icon} {usage}% ",
+        "format-icons": ""
+    },
+    "memory": {
+        "format": " {icon} {percentage}%/{swapPercentage}% ",
+        "format-icons": "",
+        "tooltip-format": "{used:0.1f}G/{swapUsed:0.1f}G"
+    },
+    "battery": {
+        "format": " {icon}  {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "states": {
+            "warning": 25,
+            "critical": 15
+        }
+    },
+    "clock": {
+        "format-alt": " {:%H:%M}",
+        "format": " {:%a, %b %d (%R)}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#88ff88'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "custom/player": {
+        "format": "{icon} {artist} - {title}",
+        "format-icons": {
+            "playing": "",
+            "paused": "",
+            "stopped": ""
+        },
+        "escape": true,
+        "tooltip-format": "{artist} - {title}",
+        "on-click": "playerctl play-pause",
+        "on-click-middle": "playerctl stop",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next"
+    },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "on-click": "helvum",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    }
+}

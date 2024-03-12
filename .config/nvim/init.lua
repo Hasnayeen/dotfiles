@@ -30,3 +30,5 @@ parser_config.dump = {
   filetype = "dump", -- if filetype does not match the parser name
 }
 vim.cmd('au BufRead,BufNewFile *.dump set filetype=dump')
+
+-- vim.cmd('colorscheme wal')

@@ -1,0 +1,144 @@
+@import '/home/hasnayeen/.cache/wal/colors-waybar.css';
+
+/* --------------------------------------------
+* General
+* -------------------------------------------- */
+* { 
+  border: none;
+  border-radius: 0px;
+  font-family: 'JetBrains Mono', 'JetBrainsMono Nerd Font Mono', 'Liga Ubuntu Mono', monospace;
+  font-weight: bold;
+  font-size: 12px;
+  min-height: 0;
+}
+
+.modules-left {
+    margin-left: 10px;
+}
+
+.modules-right {
+    margin-right: 10px;
+}
+
+/* --------------------------------------------
+* Common styles
+* -------------------------------------------- */
+#custom-launcher,
+#taskbar,
+#workspaces,
+#window,
+#tray,
+#clock,
+#wireplumber,
+#network,
+#bluetooth,
+#hardware,
+#temperature,
+#custom-player,
+#custom-updates,
+#custom-notifications,
+#custom-power,
+#custom-cycle_wall,
+#custom-clipboard,
+#custom-weather {
+  background-color: alpha(@color5, 0.5);
+  color: @background;
+  border-radius: 3px;
+  padding: 0 0.5rem;
+  margin: 0.25rem 0;
+}
+
+/* --------------------------------------------
+* Waybar
+* -------------------------------------------- */
+
+window#waybar {
+    background: transparent;
+    color: @background;
+}
+
+tooltip {
+    background: rgba(43, 48, 59, 0.5);
+    border: 4px solid @color5;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+tooltip label {
+  color: white;
+}
+
+/* --------------------------------------------
+* Taskbar
+* -------------------------------------------- */
+#taskbar.empty {
+    background-color:transparent;
+    border: none;
+}
+
+/* --------------------------------------------
+* Workspaces
+* -------------------------------------------- */
+#workspaces button {
+    padding: 0px 0px;
+    margin: 3px;
+    border-radius: 70px;
+    color: @foreground;
+    background-color: @background;
+    transition: all 0.3s ease-in-out;
+    opacity:0.4;
+    font-size:1px;
+}
+
+#workspaces button.active {
+    color: @background;
+    background-color: @color7;
+    border-radius: 10px;
+    min-width: 30px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover {
+    background-color: @color15;
+    color: @background;
+    border-radius: 10px;
+    min-width: 30px;
+    background-size: 400% 400%;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+window#waybar.empty #window {
+    background-color:transparent;
+    border: none;
+}
+
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#custom-power,#custom-launcher {
+    font-size: 16px;
+}

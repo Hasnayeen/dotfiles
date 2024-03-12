@@ -2,6 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	config = function()
+        require("nvim-treesitter.install").prefer_git = true
 		local configs = require("nvim-treesitter.configs")
 
 		configs.setup({
