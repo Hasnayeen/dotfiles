@@ -51,7 +51,19 @@ return {
                   },
                 }
         })
-        vim.keymap.set('n', '<leader>t', ':Neotree filesystem reveal toggle right<CR>', {})
+        local wk = require("which-key")
+        wk.register({
+            ["f"] = {
+                name = "NeoTree",
+                r = { "<cmd>Neotree refresh<CR>", "[R]efresh" },
+                s = { "<cmd>Neotree find<CR>", "[S]earch" },
+                t = { "<cmd>Neotree right toggle<CR>", "[T]oggle" },
+                o = { "<cmd>Neotree right open<CR>", "[O]pen" },
+                c = { "<cmd>Neotree close<CR>", "[C]lose" },
+                f = { "<cmd>Neotree focus<CR>", "[F]ocus" },
+                q = { "<cmd>Neotree quit<CR>", "[Q]uit" },
+            },
+        }, { prefix = "<leader>" })
     end
 }
 

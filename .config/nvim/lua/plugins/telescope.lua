@@ -5,31 +5,56 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
-			vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch Open [B]uffers" })
-			vim.keymap.set("n", "<leader>sf", function()
-				builtin.find_files({ hidden = true })
-			end, { desc = "[S]earch [F]iles" })
-			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-			vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+			-- convert all the keybindings to which keymap
+			local wk = require("which-key")
+			wk.register({
 
-			vim.keymap.set("n", "<leader>sc", function()
-				builtin.commands(require("telescope.themes").get_dropdown({
-					previewer = false,
-				}))
-			end, { desc = "[S]earch [C]ommands" })
+				s = {
+					name = "Search",
+					b = { builtin.buffers, "[S]earch Open [B]uffers" },
+					f = { builtin.find_files, "[S]earch [F]iles" },
+					x = {
+						function()
+							builtin.find_files({ find_command = { 'rg', '--files', '--no-ignore', '--hidden' }, })
+						end,
+						"[S]earch Files including Hidden",
+					},
+					g = { builtin.live_grep, "[S]earch [G]rep" },
+					z = {
+						function()
+							builtin.live_grep({ additional_args = { "--no-ignore" } })
+						end,
+						"[S]earch Grep including Hidden",
+					},
+					h = { builtin.help_tags, "[S]earch [H]elp" },
+					c = {
+						function()
+							builtin.commands(require("telescope.themes").get_dropdown({
+								previewer = false,
+							}))
+						end,
+						"[S]earch [C]ommands",
+					},
+					s = {
+						function()
+							builtin.spell_suggest(require("telescope.themes").get_dropdown({
+								previewer = false,
+							}))
+						end,
+						"[S]earch [S]pelling suggestions",
+					},
+					["/"] = {
+						function()
+							builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+								previewer = false,
+							}))
+						end,
+						"[/] Fuzzily search in current buffer]",
+					},
+					["?"] = { builtin.oldfiles, "[?] Find recently opened files" },
+				},
+			}, { prefix = "<leader>" })
 
-			vim.keymap.set("n", "<leader>/", function()
-				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-					previewer = false,
-				}))
-			end, { desc = "[/] Fuzzily search in current buffer]" })
-
-			vim.keymap.set("n", "<leader>ss", function()
-				builtin.spell_suggest(require("telescope.themes").get_dropdown({
-					previewer = false,
-				}))
-			end, { desc = "[S]earch [S]pelling suggestions" })
 			-- vim.keymap.vim.keymap.set('n', '<leader>ff', builtin.find_files)
 			-- vim.keymap.vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 			-- vim.keymap.vim.keymap.set('n', '<leader>fb', builtin.buffers, {})

@@ -22,7 +22,7 @@ return {
 		})
         wk.register({
             a = {
-                name = "Aerial",
+                name = "Symbols",
                 t = { "<cmd>AerialToggle<CR>", "[T]oggle" },
             },
         }, { prefix = "<leader>" })

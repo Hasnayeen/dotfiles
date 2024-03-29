@@ -1,0 +1,327 @@
+{
+  "Binds":
+  [
+    {
+      "BindType": "bind",
+      "Bind": "SUPER T",
+      "Dispatcher": "exec",
+      "Command": "$terminal",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER B",
+      "Dispatcher": "exec",
+      "Command": "$browser",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER O",
+      "Dispatcher": "exec",
+      "Command": "obsidian",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER C",
+      "Dispatcher": "killactive",
+      "Command": "",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER M",
+      "Dispatcher": "exit",
+      "Command": "",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER E",
+      "Dispatcher": "exec",
+      "Command": "$fileManager",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER V",
+      "Dispatcher": "togglefloating",
+      "Command": "",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER R",
+      "Dispatcher": "exec",
+      "Command": "$menu",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER P",
+      "Dispatcher": "pseudo",
+      "Command": "",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER J",
+      "Dispatcher": "togglesplit",
+      "Command": "",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER K",
+      "Dispatcher": "exec",
+      "Command": "nu ~/.config/hypr/scripts/keybindings.nu",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT B",
+      "Dispatcher": "exec",
+      "Command": "~/.config/waybar/launch.sh",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT W",
+      "Dispatcher": "exec",
+      "Command": "~/.config/hypr/scripts/wallpaper.sh",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER CTRL W",
+      "Dispatcher": "exec",
+      "Command": "~/.config/hypr/scripts/wallpaper.sh select",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER CTRL P",
+      "Dispatcher": "exec",
+      "Command": "~/.config/hypr/scripts/powermenu.sh",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER L",
+      "Dispatcher": "exec",
+      "Command": "hyprlock",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER left",
+      "Dispatcher": "movefocus",
+      "Command": "l",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER right",
+      "Dispatcher": "movefocus",
+      "Command": "r",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER up",
+      "Dispatcher": "movefocus",
+      "Command": "u",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER down",
+      "Dispatcher": "movefocus",
+      "Command": "d",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER 1",
+      "Dispatcher": "workspace",
+      "Command": "1",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER 2",
+      "Dispatcher": "workspace",
+      "Command": "2",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER 3",
+      "Dispatcher": "workspace",
+      "Command": "3",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER 4",
+      "Dispatcher": "workspace",
+      "Command": "4",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER 5",
+      "Dispatcher": "workspace",
+      "Command": "5",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER 6",
+      "Dispatcher": "workspace",
+      "Command": "6",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER 7",
+      "Dispatcher": "workspace",
+      "Command": "7",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER 8",
+      "Dispatcher": "workspace",
+      "Command": "8",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER 9",
+      "Dispatcher": "workspace",
+      "Command": "9",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER 0",
+      "Dispatcher": "workspace",
+      "Command": "10",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT 1",
+      "Dispatcher": "movetoworkspace",
+      "Command": "1",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT 2",
+      "Dispatcher": "movetoworkspace",
+      "Command": "2",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT 3",
+      "Dispatcher": "movetoworkspace",
+      "Command": "3",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT 4",
+      "Dispatcher": "movetoworkspace",
+      "Command": "4",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT 5",
+      "Dispatcher": "movetoworkspace",
+      "Command": "5",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT 6",
+      "Dispatcher": "movetoworkspace",
+      "Command": "6",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT 7",
+      "Dispatcher": "movetoworkspace",
+      "Command": "7",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT 8",
+      "Dispatcher": "movetoworkspace",
+      "Command": "8",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT 9",
+      "Dispatcher": "movetoworkspace",
+      "Command": "9",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT 0",
+      "Dispatcher": "movetoworkspace",
+      "Command": "10",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER S",
+      "Dispatcher": "togglespecialworkspace",
+      "Command": "magic",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER SHIFT S",
+      "Dispatcher": "movetoworkspace",
+      "Command": "special:magic",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER mouse_down",
+      "Dispatcher": "workspace",
+      "Command": "e+1",
+      "Comments": ""
+    },
+    {
+      "BindType": "bind",
+      "Bind": "SUPER mouse_up",
+      "Dispatcher": "workspace",
+      "Command": "e-1",
+      "Comments": ""
+    },
+    {
+      "BindType": "bindm",
+      "Bind": "SUPER mouse:272",
+      "Dispatcher": "movewindow",
+      "Command": "",
+      "Comments": ""
+    },
+    {
+      "BindType": "bindm",
+      "Bind": "SUPER mouse:273",
+      "Dispatcher": "resizewindow",
+      "Command": "",
+      "Comments": ""
+    }
+  ]
+}

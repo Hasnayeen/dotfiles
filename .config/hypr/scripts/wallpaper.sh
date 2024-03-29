@@ -1,13 +1,4 @@
 #!/bin/bash
-#                _ _                              
-# __      ____ _| | |_ __   __ _ _ __   ___ _ __  
-# \ \ /\ / / _` | | | '_ \ / _` | '_ \ / _ \ '__| 
-#  \ V  V / (_| | | | |_) | (_| | |_) |  __/ |    
-#   \_/\_/ \__,_|_|_| .__/ \__,_| .__/ \___|_|    
-#                   |_|         |_|               
-#  
-# by Stephan Raabe (2023) 
-# ----------------------------------------------------- 
 
 # Cache file for holding the current wallpaper
 cache_file="$HOME/.cache/current_wallpaper"
@@ -16,13 +7,13 @@ rasi_file="$HOME/.cache/current_wallpaper.rasi"
 # Create cache file if not exists
 if [ ! -f $cache_file ] ;then
     touch $cache_file
-    echo "$HOME/wallpapers/10.png" > "$cache_file"
+    echo "$HOME/wallpapers/87.jpg" > "$cache_file"
 fi
 
 # Create rasi file if not exists
 if [ ! -f $rasi_file ] ;then
     touch $rasi_file
-    echo "* { current-image: url(\"$HOME/wallpapers/10.png\", height); }" > "$rasi_file"
+    echo "* { current-image: url(\"$HOME/wallpapers/87.jpg\", height); }" > "$rasi_file"
 fi
 
 current_wallpaper=$(cat "$cache_file")
@@ -80,6 +71,11 @@ newwall=$(echo $wallpaper | sed "s|$HOME/wallpapers/||g")
 # Reload waybar with new colors
 # -----------------------------------------------------
 ~/.config/waybar/launch.sh
+
+# ----------------------------------------------------- 
+# Copy wezterm color scheme
+# ----------------------------------------------------- 
+cp "$HOME/.cache/wal/colors-wezterm.toml" "$HOME/.config/wezterm/colors/h7nOS Dark.toml"
 
 # ----------------------------------------------------- 
 # Set the new wallpaper

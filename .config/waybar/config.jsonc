@@ -17,6 +17,7 @@
     ],
     "modules-right": [
         // "custom/player",
+        "hyprland/submap",
         "wireplumber",
         "bluetooth",
         "group/hardware",

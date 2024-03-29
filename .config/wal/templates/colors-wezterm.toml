@@ -1,0 +1,37 @@
+[colors]
+ansi = [
+  "{color0}", #Black
+  "{color1}", # Red
+  "{color3}", # Green
+  "{color4}", # Yellow
+  "{color5}", # Blue
+  "{color2}", # Purple
+  "{color6}", # Cyan
+  "{color7}", # White
+]
+brights = [
+  "{color8}", # Black
+  "{color9}", # Red
+  "{color11}", # Green
+  "{color12}", # Yellow
+  "{color13}", # Blue
+  "{color10}", # Purple
+  "{color14}", # Cyan
+  "{color15}", # White
+]
+foreground = "{foreground}"
+background = "{background}"
+
+cursor_bg = "#CECDC3"
+cursor_border = "#CECDC3"
+cursor_fg = "{cursor}"
+selection_bg = "#282726"
+selection_fg = "#CECDC3"
+
+[colors.indexed]
+
+[metadata]
+aliases = ["h7nOS Dark"]
+name = "h7nOS Dark"
+origin_url = "https://github.com/hasnayeen/dotfiles"
+wezterm_version = "Always"

@@ -1,0 +1,186 @@
+# Get editor completions based on the config schema
+# "$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "catppuccin_mocha"
+
+format = """
+[╔═](bold text)\
+$username\
+$hostname\
+$shell\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$php\
+$rust\
+$fill\
+$memory_usage\
+$status\
+$cmd_duration\
+$jobs\
+$battery\
+$time
+[╚═](bold text)\
+[  ](crust bg:teal)\
+[ ](text)
+"""
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[shell]
+format = "[ ](dimmed bg:236)[$indicator]($style)[: ](bg:236)"
+style = "bold bg:236"
+fish_indicator = ""
+bash_indicator = "bash"
+disabled = true
+
+[username]
+format = "[$user]($style) in "
+show_always = false
+
+[hostname]
+format = "[$hostname]($style) in "	
+ssh_only = true
+
+[fill]
+symbol = "═"
+style = "bold text"
+disabled = false
+
+[directory]
+format = "[ 󰝰 ](bg:pink fg:crust)[ $path ](bg:base fg:text)[$read_only]($read_only_style)"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = ".../"
+read_only = "  "
+read_only_style = "bg:black fg:red"
+
+[time]
+format = "[ $time ](text bg:base)[ 󰥔 ](crust bg:lavender)"
+use_12hr = true
+disabled = false
+style = "bold crust bg:teal"
+
+[php]
+format = "[ $version ](text bg:base)[ $symbol ]($style)"
+symbol = ""
+style = "bold white bg:#787CB5"
+
+[rust]
+format = "[ $version ](text bg:base)[ $symbol ]($style)"
+symbol = ""
+style = "bold white bg:#904c27"
+
+[git_branch]
+format = "[ $symbol ](crust bg:green)[ $branch ](text bg:base)"
+symbol = ""	
+
+[git_commit]
+format = "[ \\($hash$tag\\)]($style)[ ](bg:blue)"
+tag_disabled = true
+tag_symbol = " 🏷 "
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\)[ ](bg:blue)'
+style = "bold yellow bg:blue"
+
+[git_metrics]
+format = '([+$added]($added_style) )([-$deleted]($deleted_style)[ ](bg:blue))'
+added_style = "bold yellow bg:blue"
+deleted_style = "bold pink bg:blue"
+
+[git_status]
+format = "[ $all_status$ahead_behind ]($style)"
+style = "crust bg:blue"
+
+###########################
+#  OS and Process Status  #
+###########################
+
+[status]
+format = "[ $status ](text bg:base)[ $symbol ](crust bg:maroon)"
+symbol = ""
+success_symbol = ""
+disabled = false
+
+[cmd_duration]
+format = "[ $duration ](text bg:base)[  ](crust bg:sky)"
+min_time = 1000
+# show_notifications = true
+# show_milliseconds = true
+
+[jobs]
+format = "[$symbol$number]($style)[ ](dimmed bg:236)"
+symbol = "倫"
+style = "cyan bg:236"
+
+[memory_usage]
+format = "[ ${ram}( 易${swap}) ](text bg:base)[ $symbol ](crust bg:mauve)"
+style = "red bg:surface0"
+threshold = 70
+symbol = ""
+disabled = false
+
+[battery]
+format = "[ $percentage ](text bg:base)[ $symbol ](crust bg:yellow)"
+charging_symbol = "󰂄"
+discharging_symbol = "󰁹"
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+[[battery.display]]
+threshold = 25
+style = "#ff8800"
+
+[[battery.display]]
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 60
+style = "#aed13b"
+
+[[battery.display]]
+threshold = 80
+style = "bold green"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+# disabled = true
+
+[aws]
+disabled = true
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

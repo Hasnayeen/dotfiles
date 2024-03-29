@@ -10,6 +10,7 @@ function start_symfony_dump_server()
 	local tmp_dir = vim.fn.tempname()
 	buf = vim.api.nvim_create_buf(true, false)
 	vim.api.nvim_win_set_buf(win, buf)
+    vim.api.nvim_win_set_width(win, 60)
 	local file_path = "/tmp/log.dump" -- Specify the file path
 	vim.api.nvim_buf_set_name(buf, file_path)
 	vim.api.nvim_buf_call(buf, function()

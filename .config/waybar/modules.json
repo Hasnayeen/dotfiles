@@ -27,7 +27,7 @@
     },
     "bluetooth": {
         "format": " {status}",
-        "format-disabled": "",
+        "format-disabled": "",
         "format-connected": " {num_connections}",
         "format-off": "!",
         "format-on": "",
@@ -46,16 +46,16 @@
         "on-click": "sleep 0.1 && ~/.config/hypr/scripts/powermenu.sh"
     },
     "cpu": {
-        "format": "{icon} {usage}% ",
+        "format": "C {usage}%/{load} ",
         "format-icons": ""
     },
     "memory": {
-        "format": " {icon} {percentage}%/{swapPercentage}% ",
+        "format": "M {percentage}%/{swapPercentage}% ",
         "format-icons": "",
         "tooltip-format": "{used:0.1f}G/{swapUsed:0.1f}G"
     },
     "battery": {
-        "format": " {icon}  {capacity}%",
+        "format": "B {capacity}%",
         "format-icons": [
             "",
             "",
@@ -107,7 +107,7 @@
         "on-scroll-down": "playerctl next"
     },
     "wireplumber": {
-        "format": "{icon} {volume}%",
+        "format": "<span size='large'>{icon}</span> {volume}%",
         "format-muted": "",
         "on-click": "helvum",
         "format-icons": [
@@ -115,5 +115,10 @@
             "",
             ""
         ]
+    },
+    "hyprland/submap": {
+        "format": "<span size='large'>⌘</span> {}",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch submap reset"
     }
 }

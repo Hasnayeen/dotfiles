@@ -36,9 +36,15 @@ return {
 			dapui.close()
 		end
 
-		vim.keymap.set("n", "<Leader>dt", ":DapToggleBreakpoint<CR>")
-		vim.keymap.set("n", "<Leader>dc", ":DapContinue<CR>")
-		vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>")
-		vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>")
+        local wk = require("which-key")
+        wk.register({
+            d = {
+                name = "Debug",
+                b = { "<cmd>DapToggleBreakpoint<CR>", "Toggle [B]reakpoint" },
+                c = { "<cmd>DapContinue<CR>", "[C]ontinue" },
+                t = { "<cmd>DapTerminate<CR>", "[T]erminate" },
+                o = { "<cmd>DapStepOver<CR>", "Step [O]ver" },
+            }
+        }, { prefix = "<leader>" })
 	end,
 }

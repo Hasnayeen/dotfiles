@@ -3,7 +3,7 @@ return {
     config = function ()
         vim.notify = require("notify")
         require("notify").setup({
-            background_colour = 'NORMAL',
+            background_colour = '#050509',
             timeout = 2000,
         })
         vim.api.nvim_set_hl(0, "NotifyINFOTitle", { fg = "#40a02b" })

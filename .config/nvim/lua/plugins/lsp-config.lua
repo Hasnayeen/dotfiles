@@ -36,6 +36,13 @@ return {
                 autostart = false,
             })
 			lspconfig.phpactor.setup({})
+            lspconfig.rust_analyzer.setup({
+                capabilities = capabilities,
+                autostart = false,
+            })
+            lspconfig.marksman.setup({
+                autostart = false,
+            })
 
 			local wk = require("which-key")
 			wk.register({

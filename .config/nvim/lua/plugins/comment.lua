@@ -11,8 +11,8 @@ return {
             mode = {"n", "v"},
             c = {
                 name = "Comment",
-                c = { api.toggle.linewise.current, "Toggle [C]omment" },
-                b = { api.toggle.blockwise.current, "Toggle [B]lock Comment" },
+                c = { api.call('toggle.linewise.current', 'g@$'), "Toggle [C]omment" },
+                b = { api.call('toggle.blockwise.current', 'g@$'), "Toggle [B]lock Comment" },
                 m = { api.call('toggle.linewise', 'g@'), "Toggle [M]ultiple Comment" },
             },
         }, { prefix = "<leader>", expr = true})
