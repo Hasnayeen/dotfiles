@@ -2,9 +2,11 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-dap.nvim" },
 		config = function()
 			local builtin = require("telescope.builtin")
+			require("telescope").setup({})
+			require("telescope").load_extension("dap")
 			-- convert all the keybindings to which keymap
 			local wk = require("which-key")
 			wk.register({
@@ -15,7 +17,7 @@ return {
 					f = { builtin.find_files, "[S]earch [F]iles" },
 					x = {
 						function()
-							builtin.find_files({ find_command = { 'rg', '--files', '--no-ignore', '--hidden' }, })
+							builtin.find_files({ find_command = { "rg", "--files", "--no-ignore", "--hidden" } })
 						end,
 						"[S]earch Files including Hidden",
 					},
@@ -54,11 +56,6 @@ return {
 					["?"] = { builtin.oldfiles, "[?] Find recently opened files" },
 				},
 			}, { prefix = "<leader>" })
-
-			-- vim.keymap.vim.keymap.set('n', '<leader>ff', builtin.find_files)
-			-- vim.keymap.vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-			-- vim.keymap.vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-			-- vim.keymap.vim.keymap.set('n', '<leader>fht', builtin.help_tags, {})
 		end,
 	},
 	{

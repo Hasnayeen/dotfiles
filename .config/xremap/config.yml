@@ -1,0 +1,5 @@
+keymap:
+  - name: Page up and down
+    remap:
+      CTRL_L-LEFT: PAGEUP
+      CTRL_L-RIGHT: PAGEDOWN

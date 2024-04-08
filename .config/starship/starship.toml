@@ -4,7 +4,7 @@
 palette = "catppuccin_mocha"
 
 format = """
-[╔═](bold text)\
+[ ╔═](bold text)\
 $username\
 $hostname\
 $shell\
@@ -18,25 +18,24 @@ $php\
 $rust\
 $fill\
 $memory_usage\
-$status\
 $cmd_duration\
 $jobs\
 $battery\
-$time
-[╚═](bold text)\
+$time\
+[═╗](bold text)
+[ ╚═](bold text)\
 [  ](crust bg:teal)\
 [ ](text)
 """
 
-# Inserts a blank line between shell prompts
-add_newline = true
+right_format = """
+$status\
+[═╝](text)\
+[ ](text)
+"""
 
-[shell]
-format = "[ ](dimmed bg:236)[$indicator]($style)[: ](bg:236)"
-style = "bold bg:236"
-fish_indicator = ""
-bash_indicator = "bash"
-disabled = true
+# Inserts a blank line between shell prompts
+add_newline = false
 
 [username]
 format = "[$user]($style) in "
@@ -95,6 +94,7 @@ deleted_style = "bold pink bg:blue"
 
 [git_status]
 format = "[ $all_status$ahead_behind ]($style)"
+up_to_date = '✓'
 style = "crust bg:blue"
 
 ###########################

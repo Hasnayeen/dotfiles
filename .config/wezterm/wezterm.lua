@@ -20,7 +20,7 @@ config.color_scheme = "h7nOS Dark"
 config.window_background_opacity = 0.90
 config.window_padding = {
 	left = 0,
-	right = 0,
+	right = 1,
 	top = 0,
 	bottom = 0,
 }
@@ -30,7 +30,7 @@ config.window_decorations = "RESIZE"
 config.enable_wayland = false
 config.show_update_window = false
 config.check_for_updates = false
-config.enable_scroll_bar = true
+config.enable_scroll_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.default_cursor_style = 'BlinkingUnderline'
 config.cursor_thickness = "200%"
