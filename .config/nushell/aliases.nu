@@ -104,3 +104,7 @@ alias exp = rustc --explain
 
 # alias find_pid_listening_to_port = (netstat -nlp | grep) 
 
+def yz [] {
+    echo $":open (yazi --chooser-file /dev/stdout | echo $in)\r" | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left) --no-paste
+    # echo $":open (yazi --chooser-file /dev/stdout | echo $in)\r" | wezterm cli send-text --pane-id (wezterm cli list --format json | from json | select title pane_id | where ($it.title | str contains 'hx') | get pane_id | get 0) --no-paste
+}

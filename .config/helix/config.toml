@@ -1,0 +1,61 @@
+theme = "catppuccin_mocha"
+
+[editor]
+shell = ["nu", "-c"]
+line-number = "relative"
+text-width = 80
+mouse = false
+cursorline = true
+bufferline = "multiple"
+color-modes = true
+true-color = true
+gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
+completion-trigger-len = 2
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+wrap-indicator = ""  # set wrap-indicator to "" to hide it
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "spacer", "separator", "file-name", "file-modification-indicator"]
+center = ["diagnostics", "workspace-diagnostics"]
+right = ["selections", "separator", "position", "position-percentage", "spacer", "separator", "file-encoding", "file-line-ending", "file-type"]
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = false
+snippets = true
+auto-signature-help = false
+
+[keys.insert]
+"esc" = ["normal_mode"]
+
+[keys.normal]
+"esc" = { w = ":write-quit-all", q = ":quit", s = ":write", a = ":write-all", e = ":quit!", d = ":quit-all" }
+C-x = "toggle_comments"
+C-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-d = ["extend_to_line_bounds", "yank", "paste_after"]
+C-h = [":toggle-option file-picker.hidden"]
+C-g = [":toggle-option file-picker.git-ignore"]
+C-y = [":new", ":insert-output gitui", ":buffer-close!", ":redraw"]
+# "space" = { c = ":bc" }
+
+[keys.normal.space]
+c = ":bc"
+e = """
+:sh wezterm cli split-pane --right --percent 70 | wezterm cli send-text --pane-id ($in | into int) --no-paste $'yz\n; exit' 
+"""
+# :sh echo `echo $':open "(broot)"\r' | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left) --no-paste; exit\r` 
+#  | wezterm cli send-text --pane-id (wezterm cli split-pane --right --percent 33) --no-paste
+# """
+
+[keys.select]
+C-x = ["extend_line_up", "extend_to_line_bounds"]

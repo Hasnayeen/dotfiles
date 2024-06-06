@@ -1,0 +1,117 @@
+[[language]]
+name = "php"
+language-servers = [
+    { name = "intelephense", except-features = [ "goto-declaration", "goto-type-definition", "rename-symbol", "code-action"] },
+    { name = "phpactor", except-features = ["completion"] },
+]
+auto-format = true
+formatter = { command = "~/.config/composer/vendor/bin/pint" }
+
+[language-server.phpactor]
+command = "phpactor"
+args = ["language-server", "-vvv"]
+
+[language-server.tailwindcss-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-html-language-server]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+
+ [language.debugger]
+ name = "xdebug"
+ command = "node"
+ args = ["/home/hasnayeen/.vscode/extensions/xdebug.php-debug-1.34.0/out/phpDebug.js"]
+ transport = "tcp"
+ port-arg = "--server={}"
+
+ [[language.debugger.templates]]
+ name = "listen"
+ request = "launch"
+ completion = [ { name = "binary", completion = "filename" } ]
+ args = { log = "true" }
+
+ [[language.debugger.templates]]
+ name = "Launch script"
+ request = "launch"
+ #completion = [ { name = "script", completion = "filename" } ]
+ completion = [ "filename" ]
+ args = { log = "true", program = "{0}", runtimeExecutable = "/usr/bin/php" }
+
+[[language]]
+name = "php-only"
+scope = "source.php-only"
+injection-regex = "php-only"
+file-types = []
+indent = { tab-width = 4, unit = "    " }
+roots = ["composer.json", "index.php"]
+
+[[language]]
+name = "blade"
+scope = "source.blade.php"
+file-types = [{ glob = "*.blade.php" }, "blade"]
+injection-regex = "blade"
+roots = ["composer.json", "index.php"]
+language-servers = ["vscode-html-language-server", "tailwindcss-ls", "emmet-ls" ]
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+
+# [[language]]
+# name = "rust"
+#
+# [language.debugger]
+# command = "codelldb"
+# name = "codelldb"
+# port-arg = "--port {}"
+# transport = "tcp"
+#
+# [[language.debugger.templates]]
+# name = "binary"
+# request = "launch"
+# [[language.debugger.templates.completion]]
+# completion = "filename"
+# name = "binary"
+#
+# [language.debugger.templates.args]
+# program = "{0}"
+# runInTerminal = true
+#
+# [language.auto-pairs]
+# '<' = '>'
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "tailwindcss-ls", "emmet-ls" ]
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "tailwindcss-ls", "emmet-ls" ]
+auto-format = false
+
+[[laguage]]
+name = "json"
+formatter = { command = 'prettier', args = ["--parser", "json"] }
+
+[[language]]
+name = "javascript"
+language-servers = [ "typescript-language-server", "emmet-ls" ]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server"]
+auto-format = true
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server"]
+auto-format = true
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+
+[language-server.typescript-language-server]
+config = { format = { "insertSpaceBeforeFunctionParenthesis" = true }}
+
+[language-server.emmet-ls]
+command = "emmet-ls"
+args = ["--stdio"]

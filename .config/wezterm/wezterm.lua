@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 config.initial_rows = 80
 config.initial_cols = 192
 config.font = wezterm.font_with_fallback({
-	-- "JetBrains Mono",
+		"JetBrains Mono",
     "Monaspace Neon",
 	{ family = "Symbols Nerd Font Mono", scale = 0.7 },
 	-- "JetBrainsMono Nerd Font Mono",
@@ -13,7 +13,7 @@ config.font = wezterm.font_with_fallback({
 	"UbuntuMono Nerd Font Mono",
 	"UbuntuMono Nerd Font",
 })
-config.harfbuzz_features = { "zero", "clig", "calt", "liga", "kern", "mark", "mkmk" }
+config.harfbuzz_features = { "dlig", "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "zero", "clig", "calt", "liga", "kern", "mark", "mkmk" }
 config.font_size = 16.0
 config.line_height = 1.6
 config.color_scheme = "h7nOS Dark"
@@ -26,23 +26,24 @@ config.window_padding = {
 }
 config.use_fancy_tab_bar = false
 config.tab_max_width = 128
-config.window_decorations = "RESIZE"
+config.window_decorations = "NONE"
 config.enable_wayland = false
 config.show_update_window = false
 config.check_for_updates = false
 config.enable_scroll_bar = false
 config.hide_tab_bar_if_only_one_tab = true
-config.default_cursor_style = 'BlinkingUnderline'
+config.default_cursor_style = "BlinkingUnderline"
 config.cursor_thickness = "200%"
 config.cursor_blink_rate = 1000
+config.warn_about_missing_glyphs = false
 
 -- local gpus = wezterm.gui.enumerate_gpus()
 
 -- config.webgpu_preferred_adapter = gpus[1]
-config.front_end = 'OpenGL'
-config.freetype_load_flags = 'FORCE_AUTOHINT|MONOCHROME'
-config.freetype_load_target = 'Normal'
-config.freetype_render_target = 'HorizontalLcd'
+config.front_end = "OpenGL"
+config.freetype_load_flags = "FORCE_AUTOHINT|MONOCHROME"
+config.freetype_load_target = "Normal"
+config.freetype_render_target = "HorizontalLcd"
 
 config.default_workspace = "home"
 
